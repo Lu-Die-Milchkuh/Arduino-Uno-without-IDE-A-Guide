@@ -7,29 +7,29 @@ Before we can begin we need some tools (so called toolchain). This basically con
 ## Prerequiste
 **1) Install AVR-GCC:**
   - Ubuntu/Debian
-    - ```
+     ```
       sudo apt install gcc-avr
       ```
   - Arch
-    - ```
+     ```
       sudo pacman -S avr-gcc
       ```
 **2) Install AVR-DUDE:**
   - Ubuntu/Debian
-    - ```
+     ```
       sudo apt install avrdude
       ```
   - Arch
-    - ```
+     ```
       sudo pacman -S avrdude
       ```
 **3) Install necessary Library:**     
   - Ubuntu/Debian
-    - ```
+     ```
       sudo apt install avr-libc
       ```
   - Arch
-    - ```
+     ```
       sudo pacman -S avr-libc
       ```
 ## Configure your OS
@@ -38,25 +38,25 @@ To  be able to flash our code later to our Arduino,we need to know which port be
 
 ***Note: Plug in your Arduino to your PC via USB before you proceed!***
 - **Find out what port to use:**
-  - ```
+   ```
     ls /dev/tty*  OR sudo dmesg (less clear!)
     ```
   Your port will look like(or similar) this: 
-   - ```
+    ```
      /dev/ttyACM0
      ```
 - **Find the owner of this port:**
-   - ```
+    ```
      ls -l /dev/ttyACM*
      ```     
      You should get something like this :
-     - ```
+      ```
        crw-rw---- 1 root uucp 166, 0  3. Nov 16:40 /dev/ttyACM0
        ```
      The owner is right behind root, in my case its "uucp" !
      
 - **Enable Read/Write Permission:**
-  - ```
+   ```
     sudo usermod -a -G <OWNER> <YOURUSERNAME>
     ```
     ***Note: Log out and in again or just reboot your PC!***
