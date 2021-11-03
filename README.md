@@ -80,7 +80,7 @@ PROGRAMMER 	= arduino                           # What Programmer we use(Arduino
 PORT 		= /dev/ttyACM0                      # Set this to YOUR port!
 BAUD 		= 115200                            # max baudrate, just leave it like this
 COMPILE		= $(CC) -Wall -Os -mmcu=$(DEV) 
-FILENAME 	= blink                           # set this to the name you gave your .c-file
+FILENAME 	= blink                             # set this to the name you gave your .c-file
 
 default: compile upload                     # If we call "make" , this 2 steps will be executed     
 
