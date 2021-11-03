@@ -7,13 +7,13 @@ Before we can begin we need some tools (so called toolchain). This basically con
 ## Prerequiste
 **1) Install AVR-GCC:**
   - Ubuntu/Debian
-     ```
-      sudo apt install gcc-avr
-      ```
+    ```
+    sudo apt install gcc-avr
+    ```
   - Arch
-     ```
+    ```
       sudo pacman -S avr-gcc
-      ```
+    ```
 **2) Install AVR-DUDE:**
   - Ubuntu/Debian
      ```
