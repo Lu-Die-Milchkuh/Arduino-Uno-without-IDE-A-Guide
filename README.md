@@ -52,7 +52,7 @@ To  be able to flash our code later to our Arduino,we need to know which port be
   You should get something like this :
   
   
-      ```
+       ```
        crw-rw---- 1 root uucp 166, 0  3. Nov 16:40 /dev/ttyACM0
        ```
      The owner is right behind root, in my case its "uucp" !
