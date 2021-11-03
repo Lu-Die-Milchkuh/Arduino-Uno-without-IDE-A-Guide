@@ -76,7 +76,7 @@ To test that everything is working as intended, lets create the "Hello World" pr
 ```make
 CC 		    = avr-gcc                           # Setting our Compiler to AVR-GCC
 DEV 		= atmega328p                        # Defining our Device
-PROGRAMMER 	= arduino                           # What Programmer we use, I assume you just use your Arduino Board 
+PROGRAMMER 	= arduino                           # What Programmer we use(Arduino Board)
 PORT 		= /dev/ttyACM0                      # Set this to YOUR port!
 BAUD 		= 115200                            # max baudrate, just leave it like this
 COMPILE		= $(CC) -Wall -Os -mmcu=$(DEV) 
