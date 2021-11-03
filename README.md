@@ -45,12 +45,23 @@ To  be able to flash our code later to our Arduino,we need to know which port be
    - ```
      /dev/ttyACM0
      ```
+- **Find the owner of this port:**
+   - ```
+     ls -l /dev/ttyACM*
+     ```     
+     You should get something like this :
+     - ```
+       crw-rw---- 1 root uucp 166, 0  3. Nov 16:40 /dev/ttyACM0
+       ```
+     The owner is right behind root, in my case its "uucp" !
+     
 - **Enable Read/Write Permission:**
   - ```
-    sudo chmod a+rw /dev/ttyACM0 // If your port is different than mine,insert YOURS here!
+    sudo usermod -a -G uucp <YOURUSERNAME>
     ```
+    Log out and in again or just reboot your PC.
     
-  Thats all you have to do for your OS Configuration.
+ - Thats all you have to do for your OS Configuration.
   
 ## Lets code!  
 To test that everything is working as intended, lets create the "Hello World" program of all microcontrollers => blinking a LED!
