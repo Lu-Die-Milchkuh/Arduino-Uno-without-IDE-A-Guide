@@ -70,3 +70,28 @@ To  be able to flash our code later to our Arduino,we need to know which port be
   
 ## Lets code!  
 To test that everything is working as intended, lets create the "Hello World" program of all microcontrollers => blinking a LED!
+
+
+- First of all , lets make a Makefile that makes things much easier for us:
+```make
+CC 			= avr-gcc                           # Setting our Compiler to AVR-GCC
+DEV 		= atmega328p                        # Defining our Device
+PROGRAMMER 	= arduino                       # What Programmer we use, I assume you just use your Arduino Board 
+PORT 		= /dev/ttyACM0                      # Set this to YOUR port!
+BAUD 		= 115200                            # max baudrate, just leave it like this
+COMPILE		= $(CC) -Wall -Os -mmcu=$(DEV) 
+FILENAME 	= blink
+
+default: compile upload                     # If we call "make" , this 2 steps will be executed     
+
+compile:                                    # Compiling our code to Intel-Hex
+	
+	$(COMPILE) -c $(FILENAME).c -o $(FILENAME).o
+	$(COMPILE) -o $(FILENAME).elf $(FILENAME).o
+	avr-objcopy -j .text -j .data -O ihex $(FILENAME).elf $(FILENAME).hex
+	avr-size --format=avr --mcu=$(DEV) $(FILENAME).elf
+
+upload:                                     # Uploading our Code to the Arduino
+
+	avrdude -v -p $(DEV) -c $(PROGRAMMER) -P $(PORT) -b $(BAUD) -U flash:w:$(FILENAME).hex:i
+```
