@@ -5,7 +5,7 @@ So you want to program your Arduino Uno but you think you dont learn anything do
 Before we can begin we need some tools (so called toolchain). This basically contains avr-gcc(a compiler),avr-libc(avr-library) and avr-dude(a program to upload our code to the Arduino).
 
 ## Prerequiste
-**1) installing AVR-GCC:**
+**1) install AVR-GCC:**
   - Ubuntu/Debian
     - ```
       sudo apt install gcc-avr
@@ -14,7 +14,7 @@ Before we can begin we need some tools (so called toolchain). This basically con
     - ```
       sudo pacman -S avr-gcc
       ```
-**2) installing AVR-DUDE:**
+**2) install AVR-DUDE:**
   - Ubuntu/Debian
     - ```
       sudo apt install avrdude
@@ -23,7 +23,7 @@ Before we can begin we need some tools (so called toolchain). This basically con
     - ```
       sudo pacman -S avrdude
       ```
-**3) installing necessary Library:**     
+**3) install necessary Library:**     
   - Ubuntu/Debian
     - ```
       sudo apt install avr-libc
