@@ -57,7 +57,7 @@ To  be able to flash our code later to our Arduino,we need to know which port be
      
 - **Enable Read/Write Permission:**
   - ```
-    sudo usermod -a -G uucp <YOURUSERNAME>
+    sudo usermod -a -G <OWNER> <YOURUSERNAME>
     ```
     Log out and in again or just reboot your PC.
     
