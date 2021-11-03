@@ -32,3 +32,25 @@ Before we can begin we need some tools (so called toolchain). This basically con
     - ```
       sudo pacman -S avr-libc
       ```
+## Configure your OS
+
+To  be able to flash our code later to our Arduino,we need to know which port belongs to it. Furthermore we need to enable read/write permission on that port. 
+
+***Note: Plug in your Arduino to your PC via USB before you proceed!***
+- **Find out what port to use:**
+  - ```
+    ls /dev/tty*  OR sudo dmesg (less clear!)
+    ```
+  Your port will look like(or similar) this: 
+   - ```
+     /dev/ttyACM0
+     ```
+- **Enable Read/Write Permission:**
+  - ```
+    sudo chmod a+rw /dev/ttyACM0 // If your port is different than mine,insert YOURS here!
+    ```
+    
+  Thats all you have to do for your OS Configuration.
+  
+## Lets code!  
+To test that everything is working as intended, lets create the "Hello World" program of all microcontrollers => blinking a LED!
