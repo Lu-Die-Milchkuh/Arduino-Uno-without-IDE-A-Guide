@@ -1,5 +1,6 @@
 # Arduino-Uno-without-IDE-A-Guide
 ***Note: this guide only covers Linux!***
+
 ## Introduction
 So you want to program your Arduino Uno but you think you dont learn anything doing it with the [Arduino IDE](https://www.arduino.cc/en/Main/Software_)? Dont look further, you came to the **right** place!
 Before we can begin we need some tools (so called toolchain). This basically contains avr-gcc(a compiler), avr-libc(avr-library) and avr-dude(a program to upload our code to the Arduino).
@@ -33,6 +34,7 @@ Before we can begin we need some tools (so called toolchain). This basically con
     ```
     sudo pacman -S avr-libc
     ```
+
 ## Configure your OS
 
 To  be able to flash our code later to our Arduino,we need to know which port belongs to it. Furthermore we need to enable read/write permission on that port. 
