@@ -167,6 +167,6 @@ int main(void) {
 
 ***Note: I called my file *blink.c*, if you want to chose another name, remember to change the FILENAME-argument in the Makefile!***  
 
-- Compile and upload your code now by calling *make* in a terminal. Make sure your Arduino is plugged into your PC!
+- Compile and upload your code now by calling *make* in a terminal. Now put a Resistor + LED in Series to PIN 6, it should now blink every second.
 
 All of my code can be found [here](https://github.com/Lu-Die-Milchkuh/Arduino-Uno-without-IDE-A-Guide/tree/main/Code)
