@@ -1,11 +1,17 @@
 # Arduino-Uno-without-IDE-A-Guide
 ***Note: this guide only covers Linux!***
 
-## Introduction
+# Table of contents
+* [Introduction](#Introduction)
+* [Prerequiste](#Prerequiste)
+* [Configuration](#Configuration)
+* [Hello Atmega328p!](#Hello-Atmega328p!)
+
+# Introduction
 So you want to program your Arduino Uno but you think you will not learn anything doing it with the [Arduino IDE](https://www.arduino.cc/en/Main/Software_)? Dont look further, you came to the **right** place!
 Before we can begin we need some tools (so called toolchain). This basically contains avr-gcc(a compiler), avr-libc(avr-library) and avr-dude(a program to upload our code to the Arduino).
 
-## Prerequiste
+# Prerequiste
 
 **1) Install AVR-GCC:**
   - Ubuntu/Debian
@@ -35,7 +41,7 @@ Before we can begin we need some tools (so called toolchain). This basically con
     sudo pacman -S avr-libc
     ```
 
-## Configure your OS
+# Configuration
 
 To  be able to flash our code later to our Arduino,we need to know which port belongs to it. Furthermore we need to enable read/write permission on that port. 
 
@@ -67,12 +73,20 @@ To  be able to flash our code later to our Arduino,we need to know which port be
     ***Note: Log out and in again or just reboot your PC!***
     
  - Thats all you have to do for your OS Configuration.
-  
-## Lets code!  
+
+# Hello Atmega328p!
+
+- Before we can start coding, we need to take a look at the datasheet for the Atmega328p, which is the CPU used in the Arduino Uno:
+
+
+# Lets code!  
 To test that everything is working as intended, lets create the "Hello World" program of all microcontrollers => blinking a LED!
 
 
-- First of all , lets make a Makefile that makes things much easier for us:
+- First of all , lets create a Makefile that makes things much easier for us:
+
+
+
 ```make
 CC 		= avr-gcc                           # Setting our Compiler to AVR-GCC
 DEV 		= atmega328p                        # Defining our Device
@@ -95,3 +109,40 @@ upload:                                     # Uploading our Code to the Arduino
 
 	avrdude -v -p $(DEV) -c $(PROGRAMMER) -P $(PORT) -b $(BAUD) -U flash:w:$(FILENAME).hex:i
 ```
+***Note: We will later just call this Makefile(via *make* in a terminal) so we dont have to re-type every single command manually.***
+
+
+
+- So now lets create the actually source code: 
+
+```c
+#ifndef __AVR_ATmega328P__
+#define __AVR_ATmega328P__  // Defining which CPU we are using
+#endif
+
+#define F_CPU 16000000UL // ATmega328p Frequency, needed to get correct delays!
+
+#include <avr/io.h> // Standard Input/Output library,contains predefined variables etc
+#include <util/delay.h> // library containing delay-function
+
+
+
+int main(void) {
+
+    DDRD = 0b11111100; //  Setting Bit to 1 sets the Pin to Output
+    
+    
+    for(;;) 
+    {
+        
+        PORTD ^= (1<<6);  // Toggling the sixth bit on and of with a bitwise xor!
+        _delay_ms(1000);  // Sleeping for 1 sec  
+
+        
+    }
+    
+    return 0;
+}
+```
+
+***Note: I called my file *blink.c*, if you want to chose another name, remember to change the FILENAME-argument in the Makefile!***  
