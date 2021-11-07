@@ -74,7 +74,7 @@ To  be able to flash our code later to our Arduino,we need to know which port be
     
  - Thats all you have to do for your OS Configuration.
 
-# Hello-Atmega328p!
+# Hello Atmega328p!
 
 - Before we can start coding, we need to take a look at the datasheet for the Atmega328p, which is the CPU used in the Arduino Uno:
 
