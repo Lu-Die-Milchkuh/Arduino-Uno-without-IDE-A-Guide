@@ -78,6 +78,23 @@ To  be able to flash our code later to our Arduino, we need to know which port b
 
 - Before we can start coding, we need to take a look at the [datasheet](https://github.com/Lu-Die-Milchkuh/Arduino-Uno-without-IDE-A-Guide/blob/main/Documentation/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf) for the Atmega328p, which is the CPU used in the Arduino Uno:
 
+```
+- 8-Bit Microcontroller
+- 132 instructions
+- 32 KB Flash memory
+- 1 KB EEPROM
+- 2 KB SRAM
+- 32x8 Registers  // This is what we will use the most
+```
+
+- Every PIN on the Arduino is controlled by 3 Bits from 3 different Registers(DDxn,PORTxn and PINxn). But we really only need DDxn and PORTxn
+
+```c
+- DDxn -> set PIN to Output/Input-Mode
+- PORTxn -> set PIN high/low
+```
+
+***Note: to see which Port-Register belongs to which PIN on the Arduino, have a look at this [diagram](https://github.com/Lu-Die-Milchkuh/Arduino-Uno-without-IDE-A-Guide/blob/main/Documentation/pinPort.png)***
 
 # Lets code!  
 To test that everything is working as intended, lets create the "Hello World" program of all microcontrollers => blinking a LED!
@@ -129,9 +146,11 @@ upload:                                     # Uploading our Code to the Arduino
 
 int main(void) {
 
-    DDRD = 0b11111100; //  Setting Bit to 1 sets the Pin to Output
+    DDRD = 0b01000000; //  Setting Bit to 1 sets the Pin to Output
     
-    
+    /*
+      Toggling PIN 6 on/off
+    */
     for(;;) 
     {
         
@@ -146,3 +165,5 @@ int main(void) {
 ```
 
 ***Note: I called my file *blink.c*, if you want to chose another name, remember to change the FILENAME-argument in the Makefile!***  
+
+- Compile and upload your code now by calling *make* in a terminal. Make sure your Arduino is plugged into your PC!
