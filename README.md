@@ -43,7 +43,7 @@ Before we can begin we need some tools (so called toolchain). This basically con
 
 # Configuration
 
-To  be able to flash our code later to our Arduino,we need to know which port belongs to it. Furthermore we need to enable read/write permission on that port. 
+To  be able to flash our code later to our Arduino, we need to know which port belongs to it. Furthermore we need to enable read/write permission on that port. 
 
 ***Note: Plug in your Arduino to your PC via USB before you proceed!***
 - **Find out what port to use:**
@@ -76,7 +76,7 @@ To  be able to flash our code later to our Arduino,we need to know which port be
 
 # Hello Atmega328p!
 
-- Before we can start coding, we need to take a look at the datasheet for the Atmega328p, which is the CPU used in the Arduino Uno:
+- Before we can start coding, we need to take a look at the [datasheet](https://github.com/Lu-Die-Milchkuh/Arduino-Uno-without-IDE-A-Guide/blob/main/Documentation/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf) for the Atmega328p, which is the CPU used in the Arduino Uno:
 
 
 # Lets code!  
