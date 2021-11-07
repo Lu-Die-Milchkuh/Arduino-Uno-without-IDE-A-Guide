@@ -155,7 +155,7 @@ int main(void) {
     for(;;) 
     {
         
-        PORTD ^= (1<<6);  // Toggling the sixth bit on and of with a bitwise xor!
+        PORTD ^= (1<<6);  // Toggling the sixth bit on and off with a bitwise xor!
         _delay_ms(1000);  // Sleeping for 1 sec  
 
         
