@@ -140,7 +140,7 @@ upload:                                     # Uploading our Code to the Arduino
 
 #define F_CPU 16000000UL // ATmega328p Frequency, needed to get correct delays!
 
-#include <avr/io.h> // Standard Input/Output library,contains predefined variables etc
+#include <avr/io.h> // Standard Input/Output library, contains predefined variables etc
 #include <util/delay.h> // library containing delay-function
 
 
