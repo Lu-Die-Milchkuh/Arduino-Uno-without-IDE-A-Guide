@@ -6,6 +6,7 @@
 * [Prerequiste](#Prerequiste)
 * [Configuration](#Configuration)
 * [Hello Atmega328p!](https://github.com/Lu-Die-Milchkuh/Arduino-Uno-without-IDE-A-Guide#hello-atmega328p)
+* [Lets code!](https://github.com/Lu-Die-Milchkuh/Arduino-Uno-without-IDE-A-Guide#lets-code)
 
 # Introduction
 So you want to program your Arduino Uno but you think you will not learn anything doing it with the [Arduino IDE](https://www.arduino.cc/en/Main/Software_)? Dont look further, you came to the **right** place!
